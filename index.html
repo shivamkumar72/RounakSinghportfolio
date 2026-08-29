@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rounak Kumar Singh | Portfolio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg-color: #0b0f17;
+      --card-bg: #131b26;
+      --card-border: #1f2937;
+      --primary: #38bdf8;
+      --primary-hover: #0284c7;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --gradient: linear-gradient(135deg, #38bdf8, #818cf8, #c084fc);
+      --transition: all 0.35s ease-in-out;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(11, 15, 23, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      z-index: 1000;
+    }
+
+    nav {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 1.5rem;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      background: radial-gradient(circle at 50% 20%, rgba(56, 189, 248, 0.12), transparent 70%);
+    }
+
+    .hero-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3.5rem;
+    }
+
+    .hero-content {
+      flex: 1.2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.9rem;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--primary);
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero h1 .highlight {
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .typing-text-wrapper {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      min-height: 2rem;
+    }
+
+    .typing-text {
+      color: var(--primary);
+      border-right: 2px solid var(--primary);
+      padding-right: 4px;
+      animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: var(--primary); }
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 580px;
+    }
+
+    .hero-image-box {
+      flex: 0.9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img-wrapper {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: float 4s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    .img-wrapper::before {
+      content: "";
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: var(--gradient);
+      z-index: 1;
+      filter: blur(10px);
+      opacity: 0.8;
+      animation: spinBorder 6s linear infinite;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      border-radius: 50%;
+      border: 4px solid var(--bg-color);
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-14px); }
+    }
+
+    @keyframes spinBorder {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .social-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: var(--primary);
+      color: #0b0f17;
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 0.8rem 1.6rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .btn-primary {
+      background: var(--gradient);
+      color: #0b0f17;
+      box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      background: var(--card-bg);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .container {
+      max-width: 1050px;
+      margin: auto;
+      padding: 5rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      margin-bottom: 2.8rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      width: 60px;
+      height: 3px;
+      background: var(--gradient);
+      display: block;
+      margin: 0.6rem auto 0;
+      border-radius: 3px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.6rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    .cert-card {
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-card::after {
+      content: "🔍 View Certificate";
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.72rem;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card-meta {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .cert-issuer {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 0.4rem;
+    }
+
+    .cert-id {
+      font-size: 0.75rem;
+      font-family: monospace;
+      color: #64748b;
+      margin-top: 0.4rem;
+      word-break: break-all;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .skills-category {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.6rem;
+      transition: var(--transition);
+    }
+
+    .skills-category:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+      transform: translateY(-4px);
+    }
+
+    .skills-category h4 {
+      margin-bottom: 1rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    .badge-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .badge {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      padding: 0.4rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .badge:hover {
+      background: rgba(56, 189, 248, 0.18);
+      border-color: var(--primary);
+    }
+
+    .badge-date {
+      font-size: 0.8rem;
+      color: var(--primary);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 0.6rem;
+    }
+
+    .contact-container {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.8rem 1.4rem;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .contact-item i {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(11, 15, 23, 0.95);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 10px;
+      border: 2px solid var(--card-border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      object-fit: contain;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 25px;
+      right: 35px;
+      color: #f3f4f6;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .close-modal:hover {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.2rem;
+      border-top: 1px solid var(--card-border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero-wrapper {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 2.5rem;
+      }
+      .hero h1 { font-size: 2.3rem; }
+      .social-links, .cta-btns { justify-content: center; }
+      .nav-links { display: none; }
+      .img-wrapper { width: 220px; height: 220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="#" class="logo">Rounak.dev</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Internships</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certificates</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="about">
+    <div class="hero-wrapper">
+      
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fa-solid fa-code"></i> Computer Science & Engineering
+        </div>
+        <h1>Hi, I'm <span class="highlight">Rounak Kumar Singh</span></h1>
+        
+        <div class="typing-text-wrapper">
+          I am a <span class="typing-text"></span>
+        </div>
+
+        <p>
+          Passionate developer pursuing B.Tech in CSE at Lovely Professional University[cite: 1]. Focused on Full Stack Development, Data Structures & Algorithms, and modern problem solving[cite: 1].
+        </p>
+        
+        <div class="social-links">
+          <a href="https://linkedin.com/in/rounak-singh-bhardwaj" target="_blank" title="LinkedIn" class="social-btn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Rounak8672" target="_blank" title="GitHub" class="social-btn">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:rounaksinghbhardwaj@gmail.com" title="Send Email" class="social-btn">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="tel:+919525378672" title="Call Me" class="social-btn">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </div>
+
+        <div class="cta-btns">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Contact Me</a>
+          <a href="https://github.com/Rounak8672" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> View GitHub</a>
+        </div>
+      </div>
+
+      <div class="hero-image-box">
+        <div class="img-wrapper" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 102821.png', 'profile.jpg')">
+          <img 
+            src="C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 102821.png" 
+            alt="Rounak Kumar Singh" 
+            class="profile-photo" 
+            onerror="this.src='profile.jpg'"
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="container reveal" id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="grid-2">
+      <div class="skills-category">
+        <h4><i class="fa-solid fa-laptop-code"></i> Programming Languages</h4>
+        <div class="badge-container">
+          <span class="badge">C</span>
+          <span class="badge">C++ (Intermediate)</span>
+          <span class="badge">Python (Basic to Intermediate)</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h4><i class="fa-solid fa-layer-group"></i> Technologies & Fundamentals</h4>
+        <div class="badge-container">
+          <span class="badge">HTML5</span>
+          <span class="badge">CSS3</span>
+          <span class="badge">Data Structures & Algorithms</span>
+          <span class="badge">Full Stack Development</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h4><i class="fa-solid fa-screwdriver-wrench"></i> Developer Tools</h4>
+        <div class="badge-container">
+          <span class="badge">Git</span>
+          <span class="badge">GitHub</span>
+          <span class="badge">VS Code</span>
+          <span class="badge">Dev C++</span>
+        </div>
+      </div>
+
+      <div class="skills-category">
+        <h4><i class="fa-solid fa-users-gear"></i> Soft Skills</h4>
+        <div class="badge-container">
+          <span class="badge">Problem Solving</span>
+          <span class="badge">Team Collaboration</span>
+          <span class="badge">Time Management</span>
+          <span class="badge">Adaptability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container reveal" id="experience">
+    <h2 class="section-title">Internships & Training</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div>
+          <h3>Full Stack Development Intern</h3>
+          <p class="card-meta"><i class="fa-regular fa-building"></i> InfoEra Software Pvt. Ltd. | June 2025 – July 2025[cite: 1]</p>
+          <ul>
+            <li>Hands-on training in full stack web development covering front-end and back-end fundamentals[cite: 1].</li>
+            <li>Worked on building and structuring web pages, gaining practical exposure to real-world workflows[cite: 1].</li>
+            <li>Strengthened understanding of client-side and server-side components interaction[cite: 1].</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Technical Training Intern</h3>
+          <p class="card-meta"><i class="fa-regular fa-building"></i> Aakarshan Institute | Oct 2024 – Nov 2024[cite: 1]</p>
+          <ul>
+            <li>Completed a 4-week technical training program focused on core programming fundamentals[cite: 1].</li>
+            <li>Practiced problem-solving using C and C++, building a stronger foundation in DSA[cite: 1].</li>
+            <li>Gained exposure to structured coding practices and debugging techniques[cite: 1].</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container reveal" id="projects">
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="grid-2">
+      <div class="card">
+        <div>
+          <h3>College Complaint Management System</h3>
+          <p class="card-meta"><i class="fa-regular fa-calendar"></i> July 2025 – Jan 2026[cite: 1]</p>
+          <ul>
+            <li>Designed and developed a web-based system for students to raise, track, and resolve campus-related complaints[cite: 1].</li>
+            <li>Implemented role-based access allowing students to submit complaints and admins to resolve them[cite: 1].</li>
+            <li>Built a structured database to store complaint records, status updates, and user details efficiently[cite: 1].</li>
+            <li>Improved transparency and turnaround time compared to manual processes[cite: 1].</li>
+          </ul>
+        </div>
+        <div style="margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--card-border);">
+          <div class="badge-container" style="margin-bottom: 1rem;">
+            <span class="badge">HTML</span>
+            <span class="badge">CSS</span>
+            <span class="badge">C / C++</span>
+            <span class="badge">Database Concepts</span>
+          </div>
+          <a href="https://github.com/Rounak8672" target="_blank" class="btn btn-outline" style="font-size: 0.85rem; padding: 0.4rem 0.9rem;">
+            <i class="fa-brands fa-github"></i> Repository
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Certifications with Direct Local URLs & Fallbacks -->
+  <section class="container reveal" id="certifications">
+    <h2 class="section-title">Verified Certifications</h2>
+    <div class="grid-3">
+      
+      <!-- 1. Python Essentials 1 -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 120957.png', 'cert-python1.png')">
+        <div>
+          <h3>Python Essentials 1</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy & Python Institute</p>
+          <p class="card-meta">Director: Lynn Bloomer</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: 08 Aug 2025</span>
+        </div>
+      </div>
+
+      <!-- 2. JavaScript Essentials 2 -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 121100.png', 'cert-js2.png')">
+        <div>
+          <h3>JavaScript Essentials 2</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy & JS Institute</p>
+          <p class="card-meta">Offered by Govt. Polytechnic Katihar</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: 15 Oct 2025</span>
+        </div>
+      </div>
+
+      <!-- 3. CCNA: Intro to Networks -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 121118.png', 'cert-ccna.png')">
+        <div>
+          <h3>CCNA: Intro to Networks</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy</p>
+          <p class="card-meta">Offered by Govt. Polytechnic Katihar</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: 10 Nov 2025</span>
+        </div>
+      </div>
+
+      <!-- 4. Introduction to Data Science -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 121132.png', 'cert-data-intro.png')">
+        <div>
+          <h3>Introduction to Data Science</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy</p>
+          <p class="card-meta">Director: Lynn Bloomer</p>
+          <p class="cert-id">Cert ID: c7e60d1d-5b7d-4b94-9541-14e6d2327701</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: 25 Jun 2026</span>
+        </div>
+      </div>
+
+      <!-- 5. Data Science Essentials with Python -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 121151.png', 'cert-data-py.png')">
+        <div>
+          <h3>Data Science Essentials with Python</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Cisco Networking Academy</p>
+          <p class="card-meta">Director: Lynn Bloomer</p>
+          <p class="cert-id">Cert ID: 56fea3fe-7da1-48ba-ac56-bb8f95740a65</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: 08 Aug 2026</span>
+        </div>
+      </div>
+
+      <!-- 6. Describe Cloud Computing (Microsoft) -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 121220.png', 'cert-cloud.png')">
+        <div>
+          <h3>Describe Cloud Computing</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Microsoft</p>
+          <p class="card-meta">Verified by Satya Nadella</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: August 23, 2026</span>
+        </div>
+      </div>
+
+      <!-- 7. Introduction to Artificial Intelligence (Simplilearn) -->
+      <div class="card cert-card" onclick="openModal('C:/Users/rouna/OneDrive/Pictures/Screenshots 1/Screenshot 2026-08-29 121339.png', 'cert-simplilearn.png')">
+        <div>
+          <h3>Introduction to Artificial Intelligence</h3>
+          <p class="cert-issuer"><i class="fa-solid fa-award"></i> Simplilearn SkillUp</p>
+          <p class="card-meta">Krishna Kumar (CEO, Simplilearn)</p>
+          <p class="cert-id">Certificate Code: 10640224</p>
+        </div>
+        <div>
+          <span class="badge-date">Completed: 23rd August 2026</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="container reveal" id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="grid-3">
+      <div class="card">
+        <div>
+          <h3>B.Tech - CSE</h3>
+          <p class="card-meta">Lovely Professional University (LPU)[cite: 1]</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;">Pursuing (Lateral Entry)[cite: 1]</p>
+        </div>
+        <span class="badge-date">Aug 2026 – Present[cite: 1]</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Diploma in CSE</h3>
+          <p class="card-meta">Government Polytechnic, Katihar[cite: 1]</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>CGPA:</strong> 8.5 / 10[cite: 1]</p>
+        </div>
+        <span class="badge-date">Aug 2023 – May 2026[cite: 1]</span>
+      </div>
+
+      <div class="card">
+        <div>
+          <h3>Class 10th</h3>
+          <p class="card-meta">Madhusudan Sarvoday High School[cite: 1]</p>
+          <p style="color: var(--text-muted); font-size: 0.9rem;"><strong>Percentage:</strong> 80.80%[cite: 1]</p>
+        </div>
+        <span class="badge-date">March 2023[cite: 1]</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="container reveal" id="contact">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-container">
+      <p style="color: var(--text-muted); max-width: 600px; margin: auto;">
+        I'm open to discussing full-stack projects, internships, and tech collaborations.
+      </p>
+      <div class="contact-methods">
+        <a href="mailto:rounaksinghbhardwaj@gmail.com" class="contact-item">
+          <i class="fa-solid fa-envelope"></i> rounaksinghbhardwaj@gmail.com[cite: 1]
+        </a>
+        <a href="tel:+919525378672" class="contact-item">
+          <i class="fa-solid fa-phone"></i> +91 9525378672[cite: 1]
+        </a>
+        <a href="https://linkedin.com/in/rounak-singh-bhardwaj" target="_blank" class="contact-item">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn[cite: 1]
+        </a>
+        <a href="https://github.com/Rounak8672" target="_blank" class="contact-item">
+          <i class="fa-brands fa-github"></i> GitHub[cite: 1]
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Popup Element -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImg" />
+  </div>
+
+  <footer>
+    <p>© 2026 Rounak Kumar Singh. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const words = ["Full Stack Developer", "B.Tech CSE Student @ LPU", "C / C++ & Python Developer", "Problem Solver"];
+    let i = 0;
+    let timer;
+
+    function typingEffect() {
+      let word = words[i].split("");
+      var loopTyping = function() {
+        if (word.length > 0) {
+          document.querySelector('.typing-text').innerHTML += word.shift();
+        } else {
+          setTimeout(deletingEffect, 1800);
+          return false;
+        }
+        timer = setTimeout(loopTyping, 90);
+      };
+      loopTyping();
+    }
+
+    function deletingEffect() {
+      let word = words[i].split("");
+      var loopDeleting = function() {
+        if (word.length > 0) {
+          word.pop();
+          document.querySelector('.typing-text').innerHTML = word.join("");
+        } else {
+          if (words.length > (i + 1)) {
+            i++;
+          } else {
+            i = 0;
+          }
+          setTimeout(typingEffect, 400);
+          return false;
+        }
+        timer = setTimeout(loopDeleting, 50);
+      };
+      loopDeleting();
+    }
+    typingEffect();
+
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let j = 0; j < reveals.length; j++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[j].getBoundingClientRect().top;
+        let elementVisible = 120;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[j].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    function openModal(primarySrc, fallbackSrc) {
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImg");
+      modal.style.display = "flex";
+      modalImg.src = primarySrc;
+      modalImg.onerror = function() {
+        if (fallbackSrc) {
+          modalImg.src = fallbackSrc;
+        }
+      };
+    }
+
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
+    }
+  </script>
+</body>
+</html>
